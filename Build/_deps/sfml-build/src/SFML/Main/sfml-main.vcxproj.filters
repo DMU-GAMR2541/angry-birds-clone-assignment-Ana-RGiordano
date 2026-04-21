@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\sfml-src\src\SFML\Main\MainWin32.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\sfml-src\src\SFML\Main\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{74D9ABDC-6F13-3690-BE87-DD981A5DC6E4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

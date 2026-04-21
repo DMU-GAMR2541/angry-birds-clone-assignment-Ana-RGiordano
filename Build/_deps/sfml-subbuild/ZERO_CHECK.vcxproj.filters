@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\sfml-subbuild\CMakeFiles\24342904b5f37d209f2e790d8dfbbb37\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{6034323C-C99A-3084-94FB-6FC445AFE440}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
