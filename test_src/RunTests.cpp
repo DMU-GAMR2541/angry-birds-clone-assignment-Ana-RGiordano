@@ -61,9 +61,6 @@ INSTANTIATE_TEST_SUITE_P(
 );
 
 
-
-
-
 //A single test, not a fixture. No setup is called.
 TEST(Enemy, First_test) {
     Enemy e(100);
@@ -90,8 +87,16 @@ TEST(Assertions, NonFatalEquality) {
 } // tests that values are equal
 
 TEST(Assertions, NonFatalEquality) {
+    EXPECT_NE(5, 10);
+    EXPECT_STREQ("hello", "world");
+} // check values are not equal
 
-}
+TEST(Assertions, NonFatalComparisons) {
+    EXPECT_GT(10, 5);
+    EXPECT_LT(5, 10);
+    EXPECT_GE(10, 10);
+    EXPECT_LE(5, 5);
+}// testing values that are <,<,>=,<=
 
 TEST(NewTest, test) {
     std::string str = "Check";

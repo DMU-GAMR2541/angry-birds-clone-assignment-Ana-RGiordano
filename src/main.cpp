@@ -3,6 +3,50 @@
 #include <iostream>
 
 int main() {
+
+    //LAB WEEK 2 BOX2D AND SFML
+    sf::RenderWindow window(sf::VideoMode(1200, 800), "Annoyed Flocks");
+    window.setFramerateLimit(60);
+
+    //SFML variables
+    sf::Sprite sp_rendered;
+    sf::Texture sf_tex;
+
+    if (!sf_tex.loadFromFile(str_SpriteLocation)) {
+        std::cout << "Failed to load texture: " << str_SpriteLocation << std::endl;
+    }
+    //assigning texture to sprite
+    sp_rendered.setTexture(sf_tex);
+    //set origin to centre
+    sp_rendered.setOrigin(sf_tex.getSize().x / 2.0f, sf_tex.getSize().y / 2.0f);
+
+    //render the sprite
+    sf_window.draw(sp_rendered);
+
+    //SPRITE PHYSICS
+    b2Vec2 b2_pos;
+    b2BodyDef b2_bodyDef;
+    b2FixtureDef b2_fixtureDef;
+    b2Body* b2_body;
+    b2CircleShape b2_dynamicCircle;
+
+    b2_bodyDef.type = b2_dynamicBody;
+    b2_bodyDef.position = b2_posIn;
+    b2_body = b2_world.CreateBody(&b2_bodyDef);
+
+    //setup fixture
+    b2_fixtureDef.shape = &b2_dynamicCircle;
+    b2_fixtureDef.density = 1.0f;
+    b2_fixtureDef.friction = 0.3f;
+    b2_fixtureDef.restitution = 0.5f;
+
+    //attach to body
+    b2_body->CreateFixture(&b2_fixtureDef);
+
+
+
+
+
     // --- 1. WINDOW SETUP ---
     sf::RenderWindow window(sf::VideoMode(800, 600), "Annoyed_Flocks");
     window.setFramerateLimit(60);
