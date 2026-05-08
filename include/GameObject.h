@@ -12,7 +12,7 @@ private:
 
 public:
 	GameObject() = default;
-	GameObject(std;;string& str_spriteLoc, sf::Vector2f& v2_position);
+	GameObject(std::string& str_spriteLoc, sf::Vector2f& v2_position);
 
 	//virtual functions
 	virtual void update() = 0;
@@ -22,7 +22,7 @@ public:
 	virtual ~GameObject() = default;
 
 	sf::Vector2f getPosition() const {
-	return v2position;
+	return v2_position;
 	}
 	bool isColliding() const {
 	return b_colliding;

@@ -1,7 +1,7 @@
 #pragma once
 #include "GameObject.h"
 
-class Enemy {
+class Enemy : public GameObject {
 /// <summary>
 /// Varaibles that define an enemy.
 /// </summary>
@@ -12,7 +12,14 @@ private:
 public:
     //Default constructor for an enemy. 
     Enemy() = default;
-    Enemy(int i_initialHealth) : i_health(i_initialHealth), b_isDestroyed(false) {}
+
+
+    Enemy(int i_initialHealth, std::string& str_spriteLoc, sf::Vector2f& v2_position)
+        : GameObject(str_spriteLoc, v2_position),
+        i_health(i_initialHealth),
+        b_isDestroyed(false) { }
+
+
 
     //Class functions to be tested.
     void takeDamage(int damage) {
@@ -26,4 +33,9 @@ public:
 
     int getHealth() const { return i_health; }
     bool checkIfPopped() const { return b_isDestroyed; }
+
+    virtual float getAttackValue() = 0;
+
+
+    virtual ~Enemy() = default;
 };
