@@ -1,4 +1,6 @@
 #pragma once
+#include "GameObject.h"
+
 class Enemy {
 /// <summary>
 /// Varaibles that define an enemy.

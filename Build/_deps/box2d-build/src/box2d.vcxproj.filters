@@ -1,315 +1,315 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_broad_phase.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_broad_phase.cpp">
       <Filter>src\collision</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_chain_shape.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_chain_shape.cpp">
       <Filter>src\collision</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_circle_shape.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_circle_shape.cpp">
       <Filter>src\collision</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_collide_circle.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_collide_circle.cpp">
       <Filter>src\collision</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_collide_edge.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_collide_edge.cpp">
       <Filter>src\collision</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_collide_polygon.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_collide_polygon.cpp">
       <Filter>src\collision</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_collision.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_collision.cpp">
       <Filter>src\collision</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_distance.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_distance.cpp">
       <Filter>src\collision</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_dynamic_tree.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_dynamic_tree.cpp">
       <Filter>src\collision</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_edge_shape.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_edge_shape.cpp">
       <Filter>src\collision</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_polygon_shape.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_polygon_shape.cpp">
       <Filter>src\collision</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_time_of_impact.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\collision\b2_time_of_impact.cpp">
       <Filter>src\collision</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\common\b2_block_allocator.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\common\b2_block_allocator.cpp">
       <Filter>src\common</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\common\b2_draw.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\common\b2_draw.cpp">
       <Filter>src\common</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\common\b2_math.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\common\b2_math.cpp">
       <Filter>src\common</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\common\b2_settings.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\common\b2_settings.cpp">
       <Filter>src\common</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\common\b2_stack_allocator.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\common\b2_stack_allocator.cpp">
       <Filter>src\common</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\common\b2_timer.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\common\b2_timer.cpp">
       <Filter>src\common</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_body.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_body.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_chain_circle_contact.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_chain_circle_contact.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_chain_polygon_contact.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_chain_polygon_contact.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_circle_contact.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_circle_contact.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_contact.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_contact.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_contact_manager.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_contact_manager.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_contact_solver.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_contact_solver.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_distance_joint.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_distance_joint.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_edge_circle_contact.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_edge_circle_contact.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_edge_polygon_contact.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_edge_polygon_contact.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_fixture.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_fixture.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_friction_joint.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_friction_joint.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_gear_joint.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_gear_joint.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_island.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_island.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_joint.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_joint.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_motor_joint.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_motor_joint.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_mouse_joint.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_mouse_joint.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_polygon_circle_contact.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_polygon_circle_contact.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_polygon_contact.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_polygon_contact.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_prismatic_joint.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_prismatic_joint.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_pulley_joint.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_pulley_joint.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_revolute_joint.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_revolute_joint.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_weld_joint.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_weld_joint.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_wheel_joint.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_wheel_joint.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_world.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_world.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_world_callbacks.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_world_callbacks.cpp">
       <Filter>src\dynamics</Filter>
     </ClCompile>
-    <ClCompile Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\rope\b2_rope.cpp">
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\rope\b2_rope.cpp">
       <Filter>src\rope</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_chain_circle_contact.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_chain_circle_contact.h">
       <Filter>src\dynamics</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_chain_polygon_contact.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_chain_polygon_contact.h">
       <Filter>src\dynamics</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_circle_contact.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_circle_contact.h">
       <Filter>src\dynamics</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_contact_solver.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_contact_solver.h">
       <Filter>src\dynamics</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_edge_circle_contact.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_edge_circle_contact.h">
       <Filter>src\dynamics</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_edge_polygon_contact.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_edge_polygon_contact.h">
       <Filter>src\dynamics</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_island.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_island.h">
       <Filter>src\dynamics</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_polygon_circle_contact.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_polygon_circle_contact.h">
       <Filter>src\dynamics</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_polygon_contact.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\dynamics\b2_polygon_contact.h">
       <Filter>src\dynamics</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_api.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_api.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_block_allocator.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_block_allocator.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_body.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_body.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_broad_phase.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_broad_phase.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_chain_shape.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_chain_shape.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_circle_shape.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_circle_shape.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_collision.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_collision.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_common.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_common.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_contact.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_contact.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_contact_manager.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_contact_manager.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_distance.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_distance.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_distance_joint.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_distance_joint.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_draw.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_draw.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_dynamic_tree.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_dynamic_tree.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_edge_shape.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_edge_shape.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_fixture.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_fixture.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_friction_joint.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_friction_joint.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_gear_joint.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_gear_joint.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_growable_stack.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_growable_stack.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_joint.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_joint.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_math.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_math.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_motor_joint.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_motor_joint.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_mouse_joint.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_mouse_joint.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_polygon_shape.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_polygon_shape.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_prismatic_joint.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_prismatic_joint.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_pulley_joint.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_pulley_joint.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_revolute_joint.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_revolute_joint.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_rope.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_rope.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_settings.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_settings.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_shape.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_shape.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_stack_allocator.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_stack_allocator.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_time_of_impact.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_time_of_impact.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_timer.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_timer.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_time_step.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_time_step.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_types.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_types.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_weld_joint.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_weld_joint.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_wheel_joint.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_wheel_joint.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_world.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_world.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_world_callbacks.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\b2_world_callbacks.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\box2d.h">
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\include\box2d\box2d.h">
       <Filter>include\box2d</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="H:\Documents\GitHub\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\Build\_deps\box2d-src\src\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="include">
-      <UniqueIdentifier>{5A0D9AD5-1505-378B-A9EC-915731767041}</UniqueIdentifier>
+      <UniqueIdentifier>{6A357AD9-4B65-39DE-94AD-8E9AD7979338}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\box2d">
-      <UniqueIdentifier>{2543404D-FB47-3570-834B-B58F7E120143}</UniqueIdentifier>
+      <UniqueIdentifier>{1C80F30F-A97C-39B4-9BFC-1D44AA532B13}</UniqueIdentifier>
     </Filter>
     <Filter Include="src">
-      <UniqueIdentifier>{7E3BD137-25FA-36C1-9951-0340DE880BA7}</UniqueIdentifier>
+      <UniqueIdentifier>{0F9211D7-145E-3B14-85BC-2749FD3FBE44}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\collision">
-      <UniqueIdentifier>{973D00C6-DA5E-352D-A688-0370E0DBF85B}</UniqueIdentifier>
+      <UniqueIdentifier>{88AD6AC7-BAB4-348A-8C60-8073DBF88AB6}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\common">
-      <UniqueIdentifier>{38F5D528-C5F1-3AA5-B455-9A41ED000658}</UniqueIdentifier>
+      <UniqueIdentifier>{A7356F16-666F-3C31-AB71-9DB1CFA30706}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\dynamics">
-      <UniqueIdentifier>{053B87B6-43C9-3F72-BE12-E256243050F8}</UniqueIdentifier>
+      <UniqueIdentifier>{478D2AC8-ED05-3D99-AA85-6EB59DBAFDB8}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\rope">
-      <UniqueIdentifier>{CDCD09AC-0326-34F2-892F-65C9088C75BE}</UniqueIdentifier>
+      <UniqueIdentifier>{2650D507-4077-3A64-AF7C-EC11E02B2D68}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

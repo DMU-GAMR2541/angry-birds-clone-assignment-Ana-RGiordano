@@ -416,3 +416,10 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+build/
+Build/
+cmake-build-*/
