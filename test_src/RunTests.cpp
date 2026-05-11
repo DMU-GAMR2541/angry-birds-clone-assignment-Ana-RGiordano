@@ -62,11 +62,11 @@ INSTANTIATE_TEST_SUITE_P(
 
 
 //A single test, not a fixture. No setup is called.
-TEST(Enemy, First_test) {
-    Enemy e(100);
-    std::cout << e.getHealth() << " " << 100 << std::endl;
+//TEST(Enemy, First_test) {
+  //  Enemy (100);
+    //std::cout << e.getHealth() << " " << 100 << std::endl;
     //EXPECT_GT(e.getHealth(), 100);
-}
+//}
 
 TEST_F(EnemyTest, LethalDamagePopsPig) {
     enemy->takeDamage(60);

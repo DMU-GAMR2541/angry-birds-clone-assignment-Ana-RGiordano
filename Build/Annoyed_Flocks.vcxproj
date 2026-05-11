@@ -364,8 +364,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\src\Pig.cpp" />
     <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\src\main.cpp" />
     <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\include\Enemy.h" />
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\include\GameObject.h" />
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\include\Pig.h" />
     <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\include\Slingshot.h" />
   </ItemGroup>
   <ItemGroup />

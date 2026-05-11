@@ -14,10 +14,8 @@ public:
     Enemy() = default;
 
 
-    Enemy(int i_initialHealth, std::string& str_spriteLoc, sf::Vector2f& v2_position)
-        : GameObject(str_spriteLoc, v2_position),
-        i_health(i_initialHealth),
-        b_isDestroyed(false) { }
+    Enemy(int i_initialHealth, std::string str_spriteLoc, sf::Vector2f v2_position) 
+        : GameObject(str_spriteLoc, v2_position), i_health(i_initialHealth), b_isDestroyed(false) { }
 
 
 

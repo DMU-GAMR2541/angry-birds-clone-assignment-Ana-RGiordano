@@ -1,51 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include <box2d/box2d.h>
 #include <iostream>
+#include "Pig.h"
 
 int main() {
-
-    //LAB WEEK 2 BOX2D AND SFML
-    sf::RenderWindow window(sf::VideoMode(1200, 800), "Annoyed Flocks");
-    window.setFramerateLimit(60);
-
-    //SFML variables
-    sf::Sprite sp_rendered;
-    sf::Texture sf_tex;
-
-    if (!sf_tex.loadFromFile(str_SpriteLocation)) {
-        std::cout << "Failed to load texture: " << str_SpriteLocation << std::endl;
-    }
-    //assigning texture to sprite
-    sp_rendered.setTexture(sf_tex);
-    //set origin to centre
-    sp_rendered.setOrigin(sf_tex.getSize().x / 2.0f, sf_tex.getSize().y / 2.0f);
-
-    //render the sprite
-    sf_window.draw(sp_rendered);
-
-    //SPRITE PHYSICS
-    b2Vec2 b2_pos;
-    b2BodyDef b2_bodyDef;
-    b2FixtureDef b2_fixtureDef;
-    b2Body* b2_body;
-    b2CircleShape b2_dynamicCircle;
-
-    b2_bodyDef.type = b2_dynamicBody;
-    b2_bodyDef.position = b2_posIn;
-    b2_body = b2_world.CreateBody(&b2_bodyDef);
-
-    //setup fixture
-    b2_fixtureDef.shape = &b2_dynamicCircle;
-    b2_fixtureDef.density = 1.0f;
-    b2_fixtureDef.friction = 0.3f;
-    b2_fixtureDef.restitution = 0.5f;
-
-    //attach to body
-    b2_body->CreateFixture(&b2_fixtureDef);
-
-
-
-
 
     // --- 1. WINDOW SETUP ---
     sf::RenderWindow window(sf::VideoMode(800, 600), "Annoyed_Flocks");
@@ -131,6 +89,15 @@ int main() {
     sf_ballVisual.setOrigin(15.0f, 15.0f);
     sf_ballVisual.setFillColor(sf::Color::Yellow);
 
+    //lab week 2 task 4
+
+    Pig pig1(b2Vec2(500.0f / SCALE, 540.0f / SCALE), world, "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/sprite_1.png", window, 100, 15.0f, SCALE);
+    Pig pig2(b2Vec2(570.0f / SCALE, 540.0f / SCALE), world, "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/sprite_2.png", window, 150, 20.0f, SCALE);
+    Pig pig3(b2Vec2(650.0f / SCALE, 540.0f / SCALE), world, "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/sprite_3.png", window, 200, 27.0f, SCALE);
+
+    pig1.applyImpulse(b2Vec2(0.0f, -3.0f));
+
+
     // --- 7. MAIN LOOP ---
     while (window.isOpen()) {
         sf::Event event;
@@ -170,6 +137,12 @@ int main() {
         sf_plankVisual.setPosition(b2_plankBody->GetPosition().x * SCALE, b2_plankBody->GetPosition().y * SCALE);
         sf_plankVisual.setRotation(b2_plankBody->GetAngle() * (180.0f / PI));
 
+        //sync pig sprites to box2d
+        pig1.update();
+        pig2.update();
+        pig3.update();
+
+
         //Render all of the content at each frame. Remember you need to clear the screen each iteration or artefacts remain.
         window.clear(sf::Color(135, 206, 235)); // Sky Blue
 
@@ -177,6 +150,11 @@ int main() {
         window.draw(sf_wallVisual);
         window.draw(sf_plankVisual);
         window.draw(sf_ballVisual);
+
+        //draw pigs to the window
+        pig1.draw(window);
+        pig2.draw(window);
+        pig3.draw(window);
 
         window.display();
     }

@@ -12,7 +12,8 @@ private:
 
 public:
 	GameObject() = default;
-	GameObject(std::string& str_spriteLoc, sf::Vector2f& v2_position);
+	GameObject(std::string& str_spriteLoc, sf::Vector2f& v2_position)
+		: str_spriteLoc(str_spriteLoc), v2_position(v2_position) { }
 
 	//virtual functions
 	virtual void update() = 0;
