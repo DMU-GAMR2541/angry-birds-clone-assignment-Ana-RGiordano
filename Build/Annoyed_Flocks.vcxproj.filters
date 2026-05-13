@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\src\Bird.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\src\Pig.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -9,13 +12,25 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\include\Bird.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\include\Enemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\include\FastBird.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\include\GameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\include\HeavyBird.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\include\Pig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\include\RedBird.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\include\Slingshot.h">

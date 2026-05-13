@@ -2,8 +2,18 @@
 #include "Enemy.h"
 #include <iostream>
 
-Pig::Pig(b2Vec2 b2_posIn, b2World& b2_world, std::string SpritePath, sf::RenderWindow& sf_window, int i_health, float f_radiusIn, float f_scaleIn)
-	: Enemy(i_health, SpritePath, sf::Vector2f(b2_posIn.x* f_scaleIn, b2_posIn.y* f_scaleIn)), f_scale(f_scaleIn), f_radius(f_radiusIn), str_SpriteLocation(SpritePath)
+Pig::Pig(b2Vec2 b2_posIn, b2World& b2_world, std::string spritePath, sf::RenderWindow& sf_window, 
+	int i_health, 
+	float f_radiusIn, 
+	float f_scaleIn,
+	int i_frameWidthIn,
+	int i_frameHeightIn)
+	: Enemy(i_health, spritePath, sf::Vector2f(b2_posIn.x * f_scaleIn, b2_posIn.y * f_scaleIn)),
+	f_scale(f_scaleIn),
+	f_radius(f_radiusIn),
+	str_SpriteLocation(spritePath),
+	i_frameWidth(i_frameWidthIn),
+	i_frameHeight(i_frameHeightIn)
 
 
 	//sfml 
@@ -14,13 +24,15 @@ Pig::Pig(b2Vec2 b2_posIn, b2World& b2_world, std::string SpritePath, sf::RenderW
 	}
 
 	sp_rendered.setTexture(sf_tex);
-	sp_rendered.setOrigin(sf_tex.getSize().x / 2.0f, sf_tex.getSize().y / 2.0f);
+	sp_rendered.setTextureRect(sf::IntRect(0, 0, i_frameWidth, i_frameHeight)); // crops first frame from sprite sheet
+	sp_rendered.setOrigin(i_frameWidth / 2.0f, i_frameHeight / 2.0f);
+	
 
-	//scaling sprite
+	//scaling sprite to match box2d
 	float f_diameter = f_radius * 2.0f;
 	sp_rendered.setScale(
-		f_diameter / sf_tex.getSize().x,
-		f_diameter / sf_tex.getSize().y
+		f_diameter / i_frameWidth,
+		f_diameter / i_frameHeight
 	);
 
 	//box2d
@@ -40,7 +52,12 @@ Pig::Pig(b2Vec2 b2_posIn, b2World& b2_world, std::string SpritePath, sf::RenderW
 }
 
 void Pig::update() {
-	if (checkIfPopped()) return;
+	if (checkIfPopped()) {
+		if (b2_body) {
+			b2_body->SetEnabled(false);
+		}
+		return;
+	}
 	b2Vec2 pos = b2_body->GetPosition();
 	sp_rendered.setPosition(pos.x * f_scale, pos.y * f_scale);
 	sp_rendered.setRotation(-b2_body->GetAngle() * (180.0f / 3.14159265f));
@@ -51,6 +68,17 @@ void Pig::update() {
 
 		sf_window.draw(sp_rendered);
 }
+
+	//adding Damage
+
+	void Pig::takeHit(int damage)
+	{
+		takeDamage(damage);
+	}
+
+	b2Body* Pig::getBody() {
+		return b2_body;
+	}
 
 	void Pig::applyImpulse(b2Vec2 impulse) {
 		b2_body->ApplyLinearImpulseToCenter(impulse, true);

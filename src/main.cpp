@@ -2,6 +2,13 @@
 #include <box2d/box2d.h>
 #include <iostream>
 #include "Pig.h"
+#include "Bird.h"
+#include "RedBird.h"
+#include "FastBird.h"
+#include "HeavyBird.h"
+#include <cmath>
+#include <vector>
+
 
 int main() {
 
@@ -91,12 +98,40 @@ int main() {
 
     //lab week 2 task 4
 
-    Pig pig1(b2Vec2(500.0f / SCALE, 540.0f / SCALE), world, "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/sprite_1.png", window, 100, 15.0f, SCALE);
-    Pig pig2(b2Vec2(570.0f / SCALE, 540.0f / SCALE), world, "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/sprite_2.png", window, 150, 20.0f, SCALE);
-    Pig pig3(b2Vec2(650.0f / SCALE, 540.0f / SCALE), world, "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/sprite_3.png", window, 200, 27.0f, SCALE);
+    //BIRDS
+    std::string redBirdSprite = "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/redBird2.png";
+    std::string fastBirdSprite = "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/yellowBird.png";
+    std::string heavyBirdSprite = "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/blackBird.png";
+
+
+    //PIGS
+    std::string pigSmall = "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/sprite_1.png";
+    std::string pigMedium = "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/sprite_2.png";
+    std::string pigLarge = "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/sprite_3.png";
+
+
+    Pig pig1(b2Vec2(500.0f / SCALE, 540.0f / SCALE), world, pigSmall, window, 100, 15.0f, SCALE, 57, 57);
+    Pig pig2(b2Vec2(570.0f / SCALE, 540.0f / SCALE), world, pigMedium, window, 150, 20.0f, SCALE, 96, 90);
+    Pig pig3(b2Vec2(650.0f / SCALE, 540.0f / SCALE), world, pigLarge, window, 200, 27.0f, SCALE, 100, 100);
 
     pig1.applyImpulse(b2Vec2(0.0f, -3.0f));
 
+
+    RedBird redBird(b2Vec2(500.0f / SCALE, 530.0f / SCALE), world, redBirdSprite, SCALE);
+    //FastBird fastBird(b2Vec2(570.0f / SCALE, 530.0f / SCALE), world, fastBirdSprite, SCALE);
+    //HeavyBird heavyBird(b2Vec2(650.0f / SCALE, 530.0f / SCALE), world, heavyBirdSprite, SCALE);
+
+    std::vector<Bird*> birds;
+
+    birds.push_back(&redBird);
+    //birds.push_back(&fastBird);
+    //birds.push_back(&heavyBird);
+
+
+    //testing health levels after taking damage
+    //pig1.takeHit(100);
+    //pig2.takeHit(100);
+    //pig3.takeHit(100);
 
     // --- 7. MAIN LOOP ---
     while (window.isOpen()) {
@@ -109,14 +144,22 @@ int main() {
             if (event.type == sf::Event::KeyPressed) {
                 if (event.key.code == sf::Keyboard::Space) {
                     // Reset position of the ball so that it can be fired again from its original poisition.
-                    b2_ballBody->SetTransform(b2Vec2(100.0f / SCALE, 500.0f / SCALE), 0);
-                    b2_ballBody->SetLinearVelocity(b2Vec2(0, 0));
-                    b2_ballBody->SetAngularVelocity(0);
+                    //b2_ballBody->SetTransform(b2Vec2(100.0f / SCALE, 500.0f / SCALE), 0);
+                    //b2_ballBody->SetLinearVelocity(b2Vec2(0, 0));
+                    //b2_ballBody->SetAngularVelocity(0);
 
                     // Apply impulse (X-axis, Y-axis) Negative Y is UP in Box2D because gravity is positive.
-                    b2_ballBody->ApplyLinearImpulse(b2Vec2(5.0f, -5.0f), b2_ballBody->GetWorldCenter(), true);
+                    //b2_ballBody->ApplyLinearImpulse(b2Vec2(5.0f, -5.0f), b2_ballBody->GetWorldCenter(), true);
 
-                    std::cout << "Firing!!!!" << std::endl;
+                    //std::cout << "Firing!!!!" << std::endl;
+
+                    birds[0]->getBody()->SetTransform(b2Vec2(100.0f / SCALE, 500.0f / SCALE), 0);
+                    birds[0]->getBody()->SetLinearVelocity(b2Vec2(0, 0));
+                    birds[0]->getBody()->SetAngularVelocity(0);
+
+                    birds[0]->launch(b2Vec2(7.0f, -5.0f));
+
+                    std::cout << "FIRING BIRD" << std::endl;
                 }
             }
         }
@@ -126,8 +169,8 @@ int main() {
 
         //All of the visuals needs to be synced with the physics.
 
-        sf_ballVisual.setPosition(b2_ballBody->GetPosition().x * SCALE, b2_ballBody->GetPosition().y * SCALE);
-        sf_ballVisual.setRotation(b2_ballBody->GetAngle() * (180.0f / PI));
+        //sf_ballVisual.setPosition(b2_ballBody->GetPosition().x * SCALE, b2_ballBody->GetPosition().y * SCALE);
+        //sf_ballVisual.setRotation(b2_ballBody->GetAngle() * (180.0f / PI));
 
         //Static objects usually don't move, but we set the position once.
         sf_groundVisual.setPosition(b2_groundBody->GetPosition().x * SCALE, b2_groundBody->GetPosition().y * SCALE);
@@ -137,11 +180,38 @@ int main() {
         sf_plankVisual.setPosition(b2_plankBody->GetPosition().x * SCALE, b2_plankBody->GetPosition().y * SCALE);
         sf_plankVisual.setRotation(b2_plankBody->GetAngle() * (180.0f / PI));
 
+        //update birds
+        for (Bird* bird : birds) {
+            bird->update();
+        }
+
+
         //sync pig sprites to box2d
         pig1.update();
         pig2.update();
         pig3.update();
 
+
+
+        auto checkPigHit = [&](Pig& pig, int damage) {
+            if (pig.checkIfPopped())
+                return;
+            b2Vec2 ballPos = birds[0]->getBody()->GetPosition();
+            b2Vec2 pigPos = pig.getBody()->GetPosition();
+
+            float dx = ballPos.x - pigPos.x;
+            float dy = ballPos.y - pigPos.y;
+            float distance = std::sqrt(dx * dx + dy * dy);
+
+            if (distance < 1.0f) {
+                pig.takeHit(damage);
+                std::cout << "Pig hit! Health: " << pig.getHealth() << std::endl;
+            }
+            };
+
+        checkPigHit(pig1, 50);
+        checkPigHit(pig2, 50);
+        checkPigHit(pig3, 50);
 
         //Render all of the content at each frame. Remember you need to clear the screen each iteration or artefacts remain.
         window.clear(sf::Color(135, 206, 235)); // Sky Blue
@@ -149,7 +219,13 @@ int main() {
         window.draw(sf_groundVisual);
         window.draw(sf_wallVisual);
         window.draw(sf_plankVisual);
-        window.draw(sf_ballVisual);
+        //window.draw(sf_ballVisual);
+
+        //draw birds
+        for (Bird* bird : birds) {
+            bird->draw(window);
+        }
+
 
         //draw pigs to the window
         pig1.draw(window);
