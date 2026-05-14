@@ -4,9 +4,12 @@
 Bird::Bird(b2Vec2 b2_posIn, b2World& b2_world, std::string spritePath,
 	int i_frameWidthIn, int i_frameHeightIn, 
 	float f_radiusIn, float f_scaleIn, float f_attackValueIn)
-	: GameObject(spritePath, sf::Vector2f(b2_posIn.x * f_scaleIn, b2_posIn.y * f_scaleIn)),
-	f_scale(f_scaleIn),
-	f_radius(f_radiusIn),
+	: DynamicObject(
+		spritePath,
+		sf::Vector2f(b2_posIn.x * f_scaleIn, b2_posIn.y * f_scaleIn),
+		f_scaleIn,
+		f_radiusIn),
+
 	f_attackValue(f_attackValueIn),
 	str_spriteLocation(spritePath)
 {
@@ -61,6 +64,6 @@ void Bird::launch(b2Vec2 impulse) {
 	b2_body->ApplyLinearImpulseToCenter(impulse, true);
 }
 
-b2Body* Bird::getBody() {
-	return b2_body;
-}
+//b2Body* Bird::getBody() {
+	//return b2_body;
+//}

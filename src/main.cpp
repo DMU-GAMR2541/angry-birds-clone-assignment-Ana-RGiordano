@@ -17,6 +17,19 @@ int main() {
     sf::RenderWindow window(sf::VideoMode(800, 600), "Annoyed_Flocks");
     window.setFramerateLimit(60);
 
+    //title
+    sf::Font font;
+    if (!font.loadFromFile("C:/Windows/Fonts/arial.ttf")) {
+        std::cout << "Font failed to load" << std::endl;
+    }
+
+    sf::Text titleText;
+    titleText.setFont(font);
+    titleText.setString("Annoyed Flocks (drag with mouse to play)");
+    titleText.setCharacterSize(20);
+    titleText.setFillColor(sf::Color::Red);
+    titleText.setPosition(50.0f, 10.0f);
+
     //Box2D works in meters. SFML works in pixels.
     const float SCALE = 30.0f;
 
@@ -49,9 +62,8 @@ int main() {
     b2_wallDef.position.Set(750.0f / SCALE, 500.0f / SCALE);
     b2Body* b2_wallBody = world.CreateBody(&b2_wallDef);
 
-
     b2PolygonShape b2_wallBox;
-    b2_wallBox.SetAsBox(10.0f / SCALE, 80.0f / SCALE);
+    b2_wallBox.SetAsBox(10.0f / SCALE, 160.0f / SCALE);
     b2_wallBody->CreateFixture(&b2_wallBox, 0.0f);
 
     sf::RectangleShape sf_wallVisual(sf::Vector2f(20.0f, 160.0f));
@@ -97,13 +109,10 @@ int main() {
     sf_ballVisual.setOrigin(15.0f, 15.0f);
     sf_ballVisual.setFillColor(sf::Color::Yellow);
 
-    //lab week 2 task 4
-
     //BIRDS
     std::string redBirdSprite = "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/redBird2.png";
     std::string fastBirdSprite = "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/yellowBird.png";
     std::string heavyBirdSprite = "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/blackBird.png";
-
 
     //PIGS
     std::string pigSmall = "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/sprite_1.png";
@@ -111,22 +120,49 @@ int main() {
     std::string pigLarge = "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/sprite_3.png";
 
 
-    Pig pig1(b2Vec2(500.0f / SCALE, 540.0f / SCALE), world, pigSmall, window, 100, 15.0f, SCALE, 57, 57);
-    Pig pig2(b2Vec2(570.0f / SCALE, 540.0f / SCALE), world, pigMedium, window, 150, 20.0f, SCALE, 96, 90);
-    Pig pig3(b2Vec2(650.0f / SCALE, 540.0f / SCALE), world, pigLarge, window, 200, 27.0f, SCALE, 100, 100);
+    // bottom plank
+    b2BodyDef b2_plank1Def;
+    b2_plank1Def.position.Set(680.0f / SCALE, 530.0f / SCALE);
+    b2Body* b2_plank1Body = world.CreateBody(&b2_plank1Def);
+    b2PolygonShape b2_plank1Box;
+    b2_plank1Box.SetAsBox(80.0f / SCALE, 5.0f / SCALE);
+    b2_plank1Body->CreateFixture(&b2_plank1Box, 0.0f);
 
-    pig1.applyImpulse(b2Vec2(0.0f, -3.0f));
+    sf::RectangleShape sf_plank1Visual(sf::Vector2f(160.0f, 10.0f));
+    sf_plank1Visual.setOrigin(80.0f, 5.0f);
+    sf_plank1Visual.setFillColor(sf::Color(139, 69, 19)); // Brown
 
+    // top plank
+    b2BodyDef b2_plank2Def;
+    b2_plank2Def.position.Set(680.0f / SCALE, 470.0f / SCALE);
+    b2Body* b2_plank2Body = world.CreateBody(&b2_plank2Def);
+    b2PolygonShape b2_plank2Box;
+    b2_plank2Box.SetAsBox(50.0f / SCALE, 5.0f / SCALE);
+    b2_plank2Body->CreateFixture(&b2_plank2Box, 0.0f);
 
-    RedBird redBird(b2Vec2(500.0f / SCALE, 530.0f / SCALE), world, redBirdSprite, SCALE);
-    //FastBird fastBird(b2Vec2(570.0f / SCALE, 530.0f / SCALE), world, fastBirdSprite, SCALE);
-    //HeavyBird heavyBird(b2Vec2(650.0f / SCALE, 530.0f / SCALE), world, heavyBirdSprite, SCALE);
+    sf::RectangleShape sf_plank2Visual(sf::Vector2f(100.0f, 10.0f));
+    sf_plank2Visual.setOrigin(50.0f, 5.0f);
+    sf_plank2Visual.setFillColor(sf::Color(139, 69, 19)); // Brown
 
-    std::vector<Bird*> birds;
+    //large pigs - 200 health
+    Pig pig1(b2Vec2(640.0f / SCALE, 555.0f / SCALE), world, pigLarge, window, 200, 27.0f, SCALE, 100, 100);
+    Pig pig2(b2Vec2(680.0f / SCALE, 555.0f / SCALE), world, pigLarge, window, 200, 27.0f, SCALE, 100, 100);
+    Pig pig3(b2Vec2(720.0f / SCALE, 555.0f / SCALE), world, pigLarge, window, 200, 27.0f, SCALE, 100, 100);
 
-    birds.push_back(&redBird);
-    //birds.push_back(&fastBird);
-    //birds.push_back(&heavyBird);
+    //medium pigs - 150 health
+    Pig pig4(b2Vec2(655.0f / SCALE, 500.0f / SCALE), world, pigMedium, window, 150, 20.0f, SCALE, 96, 90);
+    Pig pig5(b2Vec2(705.0f / SCALE, 500.0f / SCALE), world, pigMedium, window, 150, 20.0f, SCALE, 96, 90);
+
+    //small pig - 100 health
+    Pig pig6(b2Vec2(680.0f / SCALE, 445.0f / SCALE), world, pigSmall, window, 100, 15.0f, SCALE, 57, 57);
+
+    // keep pigs in place before game starts
+    pig1.getBody()->SetGravityScale(0);
+    pig2.getBody()->SetGravityScale(0);
+    pig3.getBody()->SetGravityScale(0);
+    pig4.getBody()->SetGravityScale(0);
+    pig5.getBody()->SetGravityScale(0);
+    pig6.getBody()->SetGravityScale(0);
 
     //press + drag
     bool isDragging = false;
@@ -138,16 +174,28 @@ int main() {
     float maxPullDown = 80.0f;
     float launchStrength = 8.0f;
 
+    RedBird redBird(b2Vec2(slingPosition.x / SCALE, slingPosition.y / SCALE), world, redBirdSprite, SCALE);
+    FastBird fastBird(b2Vec2(slingPosition.x / SCALE, slingPosition.y / SCALE), world, fastBirdSprite, SCALE);
+    HeavyBird heavyBird(b2Vec2(slingPosition.x / SCALE, slingPosition.y / SCALE), world, heavyBirdSprite, SCALE);
 
+    std::vector<Bird*> birds;
+    birds.push_back(&redBird);
+    birds.push_back(&fastBird);
+    birds.push_back(&heavyBird);
+
+    birds[1]->getBody()->SetEnabled(false);
+    birds[2]->getBody()->SetEnabled(false);
+
+    int currentBird = 0;
+    int launchedBird = 0;
+    sf::Clock resetClock;
+    bool resetTimerStarted = false;
+
+    // bird damage values - red is neutral, fast does more, heavy does most
+    std::vector<int> birdDamage = { 50, 75, 150 };
 
     Slingshot slingshot;
     slingshot.loadBird("Red");
-
-
-    //testing health levels after taking damage
-    //pig1.takeHit(100);
-    //pig2.takeHit(100);
-    //pig3.takeHit(100);
 
     // --- 7. MAIN LOOP ---
     while (window.isOpen()) {
@@ -168,39 +216,28 @@ int main() {
                     //b2_ballBody->ApplyLinearImpulse(b2Vec2(5.0f, -5.0f), b2_ballBody->GetWorldCenter(), true);
 
                     //std::cout << "Firing!!!!" << std::endl;
-                    // 
-                    // 
-                    // reset bird position
-                    birds[0]->getBody()->SetTransform(
-                        b2Vec2(100.0f / SCALE, 500.0f / SCALE),
-                        0
+
+                    birds[currentBird]->getBody()->SetTransform(
+                        b2Vec2(slingPosition.x / SCALE, slingPosition.y / SCALE), 0
                     );
-
-                    birds[0]->getBody()->SetLinearVelocity(b2Vec2(0, 0));
-                    birds[0]->getBody()->SetAngularVelocity(0);
-
+                    birds[currentBird]->getBody()->SetLinearVelocity(b2Vec2(0, 0));
+                    birds[currentBird]->getBody()->SetAngularVelocity(0);
                     birdLaunched = false;
-
+                    resetTimerStarted = false;
                     std::cout << "Bird reset" << std::endl;
                 }
             }
 
             //mouse pressed
             if (event.type == sf::Event::MouseButtonPressed) {
-
                 if (event.mouseButton.button == sf::Mouse::Left && !birdLaunched) {
-
                     isDragging = true;
-
                     dragStart = slingPosition;
-                    
-                  
                 }
             }
 
             //mouse drag
             if (event.type == sf::Event::MouseMoved && isDragging) {
-
                 float dx = event.mouseMove.x - slingPosition.x;
                 float dy = event.mouseMove.y - slingPosition.y;
 
@@ -208,9 +245,7 @@ int main() {
                 float maxDrag = 150.0f;
 
                 if (dx > 0) dx = 0;
-
                 if (dx < -maxPullLeft) dx = -maxPullLeft;
-
                 if (dy > maxPullDown) dy = maxPullDown;
                 if (dy < -maxPullDown) dy = -maxPullDown;
 
@@ -222,42 +257,28 @@ int main() {
                     dy *= scale;
                 }
 
-                dragEnd = sf::Vector2f(
-                    slingPosition.x + dx,
-                    slingPosition.y + dy
-                );
+                dragEnd = sf::Vector2f(slingPosition.x + dx, slingPosition.y + dy);
 
-                birds[0]->getBody()->SetTransform(
-                    b2Vec2(dragEnd.x / SCALE, dragEnd.y / SCALE),
-                    0
+                birds[currentBird]->getBody()->SetTransform(
+                    b2Vec2(dragEnd.x / SCALE, dragEnd.y / SCALE), 0
                 );
-
-                birds[0]->getBody()->SetLinearVelocity(b2Vec2(0, 0));
-                birds[0]->getBody()->SetAngularVelocity(0);
+                birds[currentBird]->getBody()->SetLinearVelocity(b2Vec2(0, 0));
+                birds[currentBird]->getBody()->SetAngularVelocity(0);
             }
 
             //mouse release
             if (event.type == sf::Event::MouseButtonReleased) {
-
                 if (event.mouseButton.button == sf::Mouse::Left && isDragging) {
-
                     isDragging = false;
 
-                    dragEnd = sf::Vector2f(
-                        event.mouseButton.x,
-                        event.mouseButton.y
-                    );
+                    dragEnd = sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
 
                     float dx = slingPosition.x - dragEnd.x;
-                    if (dx < 0) {
-                        dx = 0;
-                    }
-
+                    if (dx < 0) dx = 0;
                     float dy = dragEnd.y - slingPosition.y;
 
                     float dragDistance = std::sqrt(dx * dx + dy * dy);
                     float maxDrag = 90.0f;
-
 
                     if (dragDistance > maxDrag) {
                         float scale = maxDrag / dragDistance;
@@ -265,32 +286,28 @@ int main() {
                         dy *= scale;
                         dragDistance = maxDrag;
                     }
+
                     float pullX = slingPosition.x - dragEnd.x;
                     float pullY = dragEnd.y - slingPosition.y;
                     float pullDistance = std::sqrt(pullX * pullX + pullY * pullY);
 
                     if (pullDistance > 5.0f) {
-
                         int tension = static_cast<int>(pullDistance);
                         slingshot.pullBack(tension);
 
-                        birds[0]->launch(
+                        birds[currentBird]->launch(
                             b2Vec2(pullX / launchStrength, -pullY / launchStrength)
-
                         );
 
-
+                        launchedBird = currentBird;
                         birdLaunched = true;
+                        resetTimerStarted = true;
+                        resetClock.restart();
 
-
-                        std::cout << "Bird Type: "
-                            << slingshot.getBirdType() << std::endl;
-
-                        std::cout << "Tension is: "
-                            << slingshot.getTension() << std::endl;
+                        std::cout << "Bird Type: " << slingshot.getBirdType() << std::endl;
+                        std::cout << "Tension is: " << slingshot.getTension() << std::endl;
 
                         slingshot.release();
-
                     }
                 }
             }
@@ -301,34 +318,46 @@ int main() {
 
         //All of the visuals needs to be synced with the physics.
 
-        //sf_ballVisual.setPosition(b2_ballBody->GetPosition().x * SCALE, b2_ballBody->GetPosition().y * SCALE);
-        //sf_ballVisual.setRotation(b2_ballBody->GetAngle() * (180.0f / PI));
-
         //Static objects usually don't move, but we set the position once.
         sf_groundVisual.setPosition(b2_groundBody->GetPosition().x * SCALE, b2_groundBody->GetPosition().y * SCALE);
         sf_wallVisual.setPosition(b2_wallBody->GetPosition().x * SCALE, b2_wallBody->GetPosition().y * SCALE);
+        sf_plank1Visual.setPosition(b2_plank1Body->GetPosition().x * SCALE, b2_plank1Body->GetPosition().y * SCALE);
+        sf_plank2Visual.setPosition(b2_plank2Body->GetPosition().x * SCALE, b2_plank2Body->GetPosition().y * SCALE);
 
         // Dynamic wall.
         sf_plankVisual.setPosition(b2_plankBody->GetPosition().x * SCALE, b2_plankBody->GetPosition().y * SCALE);
         sf_plankVisual.setRotation(b2_plankBody->GetAngle() * (180.0f / PI));
 
-        //update birds
-        for (Bird* bird : birds) {
-            bird->update();
-        }
-
-
         //sync pig sprites to box2d
         pig1.update();
         pig2.update();
         pig3.update();
+        pig4.update();
+        pig5.update();
+        pig6.update();
 
+        if (resetTimerStarted && resetClock.getElapsedTime().asSeconds() >= 3.0f) {
+            resetTimerStarted = false;
+            birdLaunched = false;
 
+            birds[currentBird]->getBody()->SetEnabled(false);
 
-        auto checkPigHit = [&](Pig& pig, int damage) {
-            if (pig.checkIfPopped())
-                return;
-            b2Vec2 ballPos = birds[0]->getBody()->GetPosition();
+            currentBird = (currentBird + 1) % birds.size();
+
+            birds[currentBird]->getBody()->SetEnabled(true);
+            birds[currentBird]->getBody()->SetTransform(
+                b2Vec2(slingPosition.x / SCALE, slingPosition.y / SCALE), 0
+            );
+            birds[currentBird]->getBody()->SetLinearVelocity(b2Vec2(0, 0));
+            birds[currentBird]->getBody()->SetAngularVelocity(0);
+
+            std::cout << "Next bird ready!" << std::endl;
+        }
+
+        //pig collision
+        auto checkPigHit = [&](Pig& pig) {
+            if (pig.checkIfPopped()) return;
+            b2Vec2 ballPos = birds[launchedBird]->getBody()->GetPosition();
             b2Vec2 pigPos = pig.getBody()->GetPosition();
 
             float dx = ballPos.x - pigPos.x;
@@ -336,14 +365,23 @@ int main() {
             float distance = std::sqrt(dx * dx + dy * dy);
 
             if (distance < 1.0f) {
-                pig.takeHit(damage);
+                pig.getBody()->SetGravityScale(1);
+                pig.getBody()->SetFixedRotation(false);
+                pig.getBody()->SetAwake(true);
+                pig.getBody()->SetLinearVelocity(
+                    birds[launchedBird]->getBody()->GetLinearVelocity()
+                );
+                pig.takeHit(birdDamage[launchedBird]);
                 std::cout << "Pig hit! Health: " << pig.getHealth() << std::endl;
             }
             };
 
-        checkPigHit(pig1, 50);
-        checkPigHit(pig2, 50);
-        checkPigHit(pig3, 50);
+        checkPigHit(pig1);
+        checkPigHit(pig2);
+        checkPigHit(pig3);
+        checkPigHit(pig4);
+        checkPigHit(pig5);
+        checkPigHit(pig6);
 
         //Render all of the content at each frame. Remember you need to clear the screen each iteration or artefacts remain.
         window.clear(sf::Color(135, 206, 235)); // Sky Blue
@@ -351,18 +389,27 @@ int main() {
         window.draw(sf_groundVisual);
         window.draw(sf_wallVisual);
         window.draw(sf_plankVisual);
-        //window.draw(sf_ballVisual);
+        window.draw(sf_plank1Visual);
+        window.draw(sf_plank2Visual);
 
-        //draw birds
-        for (Bird* bird : birds) {
-            bird->draw(window);
+        if (birdLaunched) {
+            birds[launchedBird]->update();
+            birds[launchedBird]->draw(window);
         }
-
+        else {
+            birds[currentBird]->update();
+            birds[currentBird]->draw(window);
+        }
 
         //draw pigs to the window
         pig1.draw(window);
         pig2.draw(window);
         pig3.draw(window);
+        pig4.draw(window);
+        pig5.draw(window);
+        pig6.draw(window);
+
+        window.draw(titleText);
 
         window.display();
     }

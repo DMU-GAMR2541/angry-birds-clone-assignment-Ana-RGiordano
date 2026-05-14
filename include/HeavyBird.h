@@ -8,7 +8,7 @@ public:
 	}
 
 	void useAbility() override {
-		launch(b2Vec2(0.0f, 4.0f));
+		launch(b2Vec2(-0.5f, 5.0f));
 		std::cout << "Heavy bird ability: causes more damage" << std::endl;
 	}
 
