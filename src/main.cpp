@@ -6,6 +6,7 @@
 #include "RedBird.h"
 #include "FastBird.h"
 #include "HeavyBird.h"
+#include "Slingshot.h"
 #include <cmath>
 #include <vector>
 
@@ -127,6 +128,21 @@ int main() {
     //birds.push_back(&fastBird);
     //birds.push_back(&heavyBird);
 
+    //press + drag
+    bool isDragging = false;
+    bool birdLaunched = false;
+    sf::Vector2f dragStart;
+    sf::Vector2f dragEnd;
+    sf::Vector2f slingPosition(100.0f, 500.0f);
+    float maxPullLeft = 80.0f;
+    float maxPullDown = 80.0f;
+    float launchStrength = 8.0f;
+
+
+
+    Slingshot slingshot;
+    slingshot.loadBird("Red");
+
 
     //testing health levels after taking damage
     //pig1.takeHit(100);
@@ -152,14 +168,130 @@ int main() {
                     //b2_ballBody->ApplyLinearImpulse(b2Vec2(5.0f, -5.0f), b2_ballBody->GetWorldCenter(), true);
 
                     //std::cout << "Firing!!!!" << std::endl;
+                    // 
+                    // 
+                    // reset bird position
+                    birds[0]->getBody()->SetTransform(
+                        b2Vec2(100.0f / SCALE, 500.0f / SCALE),
+                        0
+                    );
 
-                    birds[0]->getBody()->SetTransform(b2Vec2(100.0f / SCALE, 500.0f / SCALE), 0);
                     birds[0]->getBody()->SetLinearVelocity(b2Vec2(0, 0));
                     birds[0]->getBody()->SetAngularVelocity(0);
 
-                    birds[0]->launch(b2Vec2(7.0f, -5.0f));
+                    birdLaunched = false;
 
-                    std::cout << "FIRING BIRD" << std::endl;
+                    std::cout << "Bird reset" << std::endl;
+                }
+            }
+
+            //mouse pressed
+            if (event.type == sf::Event::MouseButtonPressed) {
+
+                if (event.mouseButton.button == sf::Mouse::Left && !birdLaunched) {
+
+                    isDragging = true;
+
+                    dragStart = slingPosition;
+                    
+                  
+                }
+            }
+
+            //mouse drag
+            if (event.type == sf::Event::MouseMoved && isDragging) {
+
+                float dx = event.mouseMove.x - slingPosition.x;
+                float dy = event.mouseMove.y - slingPosition.y;
+
+                float distance = std::sqrt(dx * dx + dy * dy);
+                float maxDrag = 150.0f;
+
+                if (dx > 0) dx = 0;
+
+                if (dx < -maxPullLeft) dx = -maxPullLeft;
+
+                if (dy > maxPullDown) dy = maxPullDown;
+                if (dy < -maxPullDown) dy = -maxPullDown;
+
+                dragEnd = sf::Vector2f(slingPosition.x + dx, slingPosition.y + dy);
+
+                if (distance > maxDrag) {
+                    float scale = maxDrag / distance;
+                    dx *= scale;
+                    dy *= scale;
+                }
+
+                dragEnd = sf::Vector2f(
+                    slingPosition.x + dx,
+                    slingPosition.y + dy
+                );
+
+                birds[0]->getBody()->SetTransform(
+                    b2Vec2(dragEnd.x / SCALE, dragEnd.y / SCALE),
+                    0
+                );
+
+                birds[0]->getBody()->SetLinearVelocity(b2Vec2(0, 0));
+                birds[0]->getBody()->SetAngularVelocity(0);
+            }
+
+            //mouse release
+            if (event.type == sf::Event::MouseButtonReleased) {
+
+                if (event.mouseButton.button == sf::Mouse::Left && isDragging) {
+
+                    isDragging = false;
+
+                    dragEnd = sf::Vector2f(
+                        event.mouseButton.x,
+                        event.mouseButton.y
+                    );
+
+                    float dx = slingPosition.x - dragEnd.x;
+                    if (dx < 0) {
+                        dx = 0;
+                    }
+
+                    float dy = dragEnd.y - slingPosition.y;
+
+                    float dragDistance = std::sqrt(dx * dx + dy * dy);
+                    float maxDrag = 90.0f;
+
+
+                    if (dragDistance > maxDrag) {
+                        float scale = maxDrag / dragDistance;
+                        dx *= scale;
+                        dy *= scale;
+                        dragDistance = maxDrag;
+                    }
+                    float pullX = slingPosition.x - dragEnd.x;
+                    float pullY = dragEnd.y - slingPosition.y;
+                    float pullDistance = std::sqrt(pullX * pullX + pullY * pullY);
+
+                    if (pullDistance > 5.0f) {
+
+                        int tension = static_cast<int>(pullDistance);
+                        slingshot.pullBack(tension);
+
+                        birds[0]->launch(
+                            b2Vec2(pullX / launchStrength, -pullY / launchStrength)
+
+                        );
+
+
+                        birdLaunched = true;
+
+
+                        std::cout << "Bird Type: "
+                            << slingshot.getBirdType() << std::endl;
+
+                        std::cout << "Tension is: "
+                            << slingshot.getTension() << std::endl;
+
+                        slingshot.release();
+
+                    }
                 }
             }
         }
