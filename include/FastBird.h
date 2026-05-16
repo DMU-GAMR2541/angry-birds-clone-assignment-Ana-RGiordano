@@ -8,7 +8,7 @@ public:
 	}
 
 	void useAbility() override{
-		launch(b2Vec2(1.0f, 0.0f));
+		launch(b2Vec2(0.5f, 0.0f));
 		std::cout << "Fast bird ability: speed boost." << std::endl;
 	}
 };

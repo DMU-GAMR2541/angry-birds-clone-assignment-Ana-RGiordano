@@ -144,6 +144,12 @@ int main() {
     sf_plank2Visual.setOrigin(50.0f, 5.0f);
     sf_plank2Visual.setFillColor(sf::Color(139, 69, 19)); // Brown
 
+    // planks health
+    int i_plank1Health = 100;
+    int i_plank2Health = 100;
+    bool b_plank1Destroyed = false;
+    bool b_plank2Destroyed = false; 
+
     //large pigs - 200 health
     Pig pig1(b2Vec2(640.0f / SCALE, 555.0f / SCALE), world, pigLarge, window, 200, 27.0f, SCALE, 100, 100);
     Pig pig2(b2Vec2(680.0f / SCALE, 555.0f / SCALE), world, pigLarge, window, 200, 27.0f, SCALE, 100, 100);
@@ -172,7 +178,7 @@ int main() {
     sf::Vector2f slingPosition(100.0f, 500.0f);
     float maxPullLeft = 80.0f;
     float maxPullDown = 80.0f;
-    float launchStrength = 8.0f;
+    float launchStrength = 15.0f;
 
     RedBird redBird(b2Vec2(slingPosition.x / SCALE, slingPosition.y / SCALE), world, redBirdSprite, SCALE);
     FastBird fastBird(b2Vec2(slingPosition.x / SCALE, slingPosition.y / SCALE), world, fastBirdSprite, SCALE);
@@ -382,6 +388,37 @@ int main() {
         checkPigHit(pig4);
         checkPigHit(pig5);
         checkPigHit(pig6);
+
+        if (!b_plank1Destroyed && birdLaunched) {
+            b2Vec2 ballPos = birds[launchedBird]->getBody()->GetPosition();
+            b2Vec2 plankPos = b2_plank1Body->GetPosition();
+            float dx = ballPos.x - plankPos.x;
+            float dy = ballPos.y - plankPos.y;
+            if (std::sqrt(dx * dx + dy * dy) < 1.5f) {
+                i_plank1Health -= birdDamage[launchedBird];
+                if (i_plank1Health <= 0) {
+                    b_plank1Destroyed = true;
+                    world.DestroyBody(b2_plank1Body);
+                    std::cout << "Plank 1 Destroyed!" << std::endl;
+                }
+            }
+        }
+
+        if (!b_plank2Destroyed && birdLaunched) {
+            b2Vec2 ballPos = birds[launchedBird]->getBody()->GetPosition();
+            b2Vec2 plankPos = b2_plank2Body->GetPosition();
+            float dx = ballPos.x - plankPos.x;
+            float dy = ballPos.y - plankPos.y;
+            if (std::sqrt(dx * dx + dy * dy) < 1.5f) {
+                i_plank2Health -= birdDamage[launchedBird];
+                if (i_plank2Health <= 0) {
+                    b_plank2Destroyed = true;
+                    world.DestroyBody(b2_plank2Body);
+                    std::cout << "PLank 2 destroyed" << std::endl;
+                }
+            }
+        }
+
 
         //Render all of the content at each frame. Remember you need to clear the screen each iteration or artefacts remain.
         window.clear(sf::Color(135, 206, 235)); // Sky Blue
