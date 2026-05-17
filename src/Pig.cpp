@@ -36,7 +36,7 @@ Pig::Pig(b2Vec2 b2_posIn, b2World& b2_world, std::string spritePath, sf::RenderW
 	);
 
 	//box2d
-	b2_bodyDef.type = b2_dynamicBody;
+	b2_bodyDef.type = b2_staticBody;
 	b2_bodyDef.position = b2_posIn;
 
 	b2_body = b2_world.CreateBody(&b2_bodyDef);

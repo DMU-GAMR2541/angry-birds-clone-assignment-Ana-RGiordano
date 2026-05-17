@@ -7,8 +7,10 @@
 #include "FastBird.h"
 #include "HeavyBird.h"
 #include "Slingshot.h"
+#include "ContactListener.h" 
 #include <cmath>
 #include <vector>
+
 
 
 int main() {
@@ -151,24 +153,24 @@ int main() {
     bool b_plank2Destroyed = false; 
 
     //large pigs - 200 health
-    Pig pig1(b2Vec2(640.0f / SCALE, 555.0f / SCALE), world, pigLarge, window, 200, 27.0f, SCALE, 100, 100);
-    Pig pig2(b2Vec2(680.0f / SCALE, 555.0f / SCALE), world, pigLarge, window, 200, 27.0f, SCALE, 100, 100);
-    Pig pig3(b2Vec2(720.0f / SCALE, 555.0f / SCALE), world, pigLarge, window, 200, 27.0f, SCALE, 100, 100);
+    Pig pig1(b2Vec2(640.0f / SCALE, 555.0f / SCALE), world, pigLarge, window, 250, 27.0f, SCALE, 100, 100);
+    Pig pig2(b2Vec2(680.0f / SCALE, 555.0f / SCALE), world, pigLarge, window, 250, 27.0f, SCALE, 100, 100);
+    Pig pig3(b2Vec2(720.0f / SCALE, 555.0f / SCALE), world, pigLarge, window, 250, 27.0f, SCALE, 100, 100);
 
     //medium pigs - 150 health
-    Pig pig4(b2Vec2(655.0f / SCALE, 500.0f / SCALE), world, pigMedium, window, 150, 20.0f, SCALE, 96, 90);
-    Pig pig5(b2Vec2(705.0f / SCALE, 500.0f / SCALE), world, pigMedium, window, 150, 20.0f, SCALE, 96, 90);
+    Pig pig4(b2Vec2(655.0f / SCALE, 500.0f / SCALE), world, pigMedium, window, 200, 20.0f, SCALE, 96, 90);
+    Pig pig5(b2Vec2(705.0f / SCALE, 500.0f / SCALE), world, pigMedium, window, 200, 20.0f, SCALE, 96, 90);
 
     //small pig - 100 health
-    Pig pig6(b2Vec2(680.0f / SCALE, 445.0f / SCALE), world, pigSmall, window, 100, 15.0f, SCALE, 57, 57);
+    Pig pig6(b2Vec2(680.0f / SCALE, 445.0f / SCALE), world, pigSmall, window, 150, 15.0f, SCALE, 57, 57);
 
     // keep pigs in place before game starts
-    pig1.getBody()->SetGravityScale(0);
-    pig2.getBody()->SetGravityScale(0);
-    pig3.getBody()->SetGravityScale(0);
-    pig4.getBody()->SetGravityScale(0);
-    pig5.getBody()->SetGravityScale(0);
-    pig6.getBody()->SetGravityScale(0);
+    //pig1.getBody()->SetGravityScale(0);
+    //pig2.getBody()->SetGravityScale(0);
+    //pig3.getBody()->SetGravityScale(0);
+    //pig4.getBody()->SetGravityScale(0);
+    //pig5.getBody()->SetGravityScale(0);
+    //pig6.getBody()->SetGravityScale(0);
 
     //press + drag
     bool isDragging = false;
@@ -198,7 +200,15 @@ int main() {
     bool resetTimerStarted = false;
 
     // bird damage values - red is neutral, fast does more, heavy does most
-    std::vector<int> birdDamage = { 50, 75, 150 };
+    std::vector<int> birdDamage = { 25, 50, 100 };
+
+    GameContactListener contactListener;
+    contactListener.pigs = { &pig1, &pig2, &pig3, &pig4, &pig5, &pig6 };
+    contactListener.birds = &birds;
+    contactListener.birdDamage = &birdDamage;
+    contactListener.launchedBird = &launchedBird;
+    world.SetContactListener(&contactListener);
+
 
     Slingshot slingshot;
     slingshot.loadBird("Red");
@@ -322,6 +332,11 @@ int main() {
         // Update Physics
         world.Step(1.0f / 60.0f, 8, 3);
 
+        for (b2Body* body : contactListener.destructionQueue) {
+            body->SetEnabled(false);
+        }
+        contactListener.destructionQueue.clear();
+
         //All of the visuals needs to be synced with the physics.
 
         //Static objects usually don't move, but we set the position once.
@@ -360,34 +375,33 @@ int main() {
             std::cout << "Next bird ready!" << std::endl;
         }
 
+
         //pig collision
-        auto checkPigHit = [&](Pig& pig) {
-            if (pig.checkIfPopped()) return;
-            b2Vec2 ballPos = birds[launchedBird]->getBody()->GetPosition();
-            b2Vec2 pigPos = pig.getBody()->GetPosition();
+        //auto checkPigHit = [&](Pig& pig, float f_pigRadius) {
+            //if (pig.checkIfPopped()) return;
+            //b2Vec2 ballPos = birds[launchedBird]->getBody()->GetPosition();
+            //b2Vec2 pigPos = pig.getBody()->GetPosition();
 
-            float dx = ballPos.x - pigPos.x;
-            float dy = ballPos.y - pigPos.y;
-            float distance = std::sqrt(dx * dx + dy * dy);
+            //float dx = ballPos.x - pigPos.x;
+            //float dy = ballPos.y - pigPos.y;
+            //float distance = std::sqrt(dx * dx + dy * dy);
 
-            if (distance < 1.0f) {
-                pig.getBody()->SetGravityScale(1);
-                pig.getBody()->SetFixedRotation(false);
-                pig.getBody()->SetAwake(true);
-                pig.getBody()->SetLinearVelocity(
-                    birds[launchedBird]->getBody()->GetLinearVelocity()
-                );
-                pig.takeHit(birdDamage[launchedBird]);
-                std::cout << "Pig hit! Health: " << pig.getHealth() << std::endl;
-            }
-            };
+            //if (distance < f_pigRadius + (15.0f / SCALE)) {
+                //pig.getBody()->SetType(b2_dynamicBody);
+                //pig.takeHit(birdDamage[launchedBird]);
+                //std::cout << "Pig hit! Health: " << pig.getHealth() << std::endl;
+            //}
+            //};
 
-        checkPigHit(pig1);
-        checkPigHit(pig2);
-        checkPigHit(pig3);
-        checkPigHit(pig4);
-        checkPigHit(pig5);
-        checkPigHit(pig6);
+            //if (birdLaunched) {
+                //checkPigHit(pig1, 27.0f / SCALE);
+                //checkPigHit(pig2, 27.0f / SCALE);
+                //checkPigHit(pig3, 27.0f / SCALE);
+                //checkPigHit(pig4, 20.0f / SCALE);
+                //checkPigHit(pig5, 20.0f / SCALE);
+                //checkPigHit(pig6, 15.0f / SCALE);
+            //}
+
 
         if (!b_plank1Destroyed && birdLaunched) {
             b2Vec2 ballPos = birds[launchedBird]->getBody()->GetPosition();
@@ -398,7 +412,7 @@ int main() {
                 i_plank1Health -= birdDamage[launchedBird];
                 if (i_plank1Health <= 0) {
                     b_plank1Destroyed = true;
-                    world.DestroyBody(b2_plank1Body);
+                    //world.DestroyBody(b2_plank1Body);
                     std::cout << "Plank 1 Destroyed!" << std::endl;
                 }
             }
@@ -413,7 +427,7 @@ int main() {
                 i_plank2Health -= birdDamage[launchedBird];
                 if (i_plank2Health <= 0) {
                     b_plank2Destroyed = true;
-                    world.DestroyBody(b2_plank2Body);
+                    //world.DestroyBody(b2_plank2Body);
                     std::cout << "PLank 2 destroyed" << std::endl;
                 }
             }
