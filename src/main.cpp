@@ -165,12 +165,12 @@ int main() {
     Pig pig6(b2Vec2(680.0f / SCALE, 445.0f / SCALE), world, pigSmall, window, 150, 15.0f, SCALE, 57, 57);
 
     // keep pigs in place before game starts
-    //pig1.getBody()->SetGravityScale(0);
-    //pig2.getBody()->SetGravityScale(0);
-    //pig3.getBody()->SetGravityScale(0);
-    //pig4.getBody()->SetGravityScale(0);
-    //pig5.getBody()->SetGravityScale(0);
-    //pig6.getBody()->SetGravityScale(0);
+    pig1.getBody()->SetGravityScale(0);
+    pig2.getBody()->SetGravityScale(0);
+    pig3.getBody()->SetGravityScale(0);
+    pig4.getBody()->SetGravityScale(0);
+    pig5.getBody()->SetGravityScale(0);
+    pig6.getBody()->SetGravityScale(0);
 
     //press + drag
     bool isDragging = false;
@@ -202,12 +202,14 @@ int main() {
     // bird damage values - red is neutral, fast does more, heavy does most
     std::vector<int> birdDamage = { 25, 50, 100 };
 
+
     GameContactListener contactListener;
     contactListener.pigs = { &pig1, &pig2, &pig3, &pig4, &pig5, &pig6 };
     contactListener.birds = &birds;
     contactListener.birdDamage = &birdDamage;
     contactListener.launchedBird = &launchedBird;
     world.SetContactListener(&contactListener);
+
 
 
     Slingshot slingshot;
@@ -332,10 +334,27 @@ int main() {
         // Update Physics
         world.Step(1.0f / 60.0f, 8, 3);
 
+
+        for (b2Body* body : contactListener.bodiesToPush) {
+            body->SetGravityScale(1.0f);
+            body->SetFixedRotation(false);
+            body->SetAwake(true);
+
+            body->SetLinearVelocity(b2Vec2(5.0f, -2.0f));
+        }
+
+        contactListener.bodiesToPush.clear();
+
         for (b2Body* body : contactListener.destructionQueue) {
             body->SetEnabled(false);
         }
+
         contactListener.destructionQueue.clear();
+
+
+
+
+
 
         //All of the visuals needs to be synced with the physics.
 

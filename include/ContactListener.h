@@ -10,6 +10,8 @@ class GameContactListener : public b2ContactListener {
 public:
     std::set<b2Body*> destructionQueue;
 
+    std::vector<b2Body*> bodiesToPush;
+
     std::vector<Pig*> pigs;
     std::vector<Bird*>* birds = nullptr;
     std::vector<int>* birdDamage = nullptr;
@@ -40,6 +42,19 @@ public:
 
             //only damage if the other body is a pig
             if (bodyA == pigBody || bodyB == pigBody) {
+
+
+                //bodiesToPush.push_back(pigBody);
+
+               // b2Vec2 birdVelocity = launchedBirdBody->GetLinearVelocity();
+                pigBody->SetGravityScale(1.0f);
+                //pigBody->SetFixedRotation(false);
+                pigBody->SetAwake(true);
+
+                pigBody->SetLinearVelocity(b2Vec2(4.0f, -1.0f));
+                    //b2Vec2(birdVelocity.x * 0.4f, birdVelocity.y * 0.2f)
+                //);
+
                 pig->takeHit((*birdDamage)[*launchedBird]);
 
                 std::cout << "Pig hit! Health: "
