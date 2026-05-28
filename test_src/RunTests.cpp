@@ -71,7 +71,18 @@ TEST(Assertions, FatalAssertions) {
     ASSERT_GT(health, 0);
 }
 
+//string, int and float comparisons
+TEST(Assertions, TypeComparisons) {
+    int health = 100;
+    float scale = 30.0f;
+    std::string birdType = "Red";
 
+    EXPECT_EQ(health, 100);
+    EXPECT_FLOAT_EQ(scale, 30.0f);
+    EXPECT_EQ(birdType, "Red");
+    EXPECT_NE(health, 50);
+    EXPECT_NE(birdType, "Fast");
+}
 
 int main(int argc, char** argv) {
     testing::InitGoogleTest(&argc, argv);
