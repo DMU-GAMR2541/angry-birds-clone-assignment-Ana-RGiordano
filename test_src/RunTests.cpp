@@ -159,6 +159,17 @@ TEST(Placement, StaticObjectPlacementWithinWindow) {
     EXPECT_LE(plankY, 600.0f);
 }
 
+//tests whether the position of a game object is calculated correctly
+TEST(Placement, PigPositionsRelativeToThreeGameObjects) {
+    float pig1X = 640.0f;
+    float pig2X = 680.0f;
+    float pig3X = 720.0f;
+
+    EXPECT_LT(pig1X, pig2X);
+    EXPECT_LT(pig2X, pig3X);
+    EXPECT_GT(pig3X, pig1X);
+}
+
 int main(int argc, char** argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
