@@ -170,6 +170,15 @@ TEST(Placement, PigPositionsRelativeToThreeGameObjects) {
     EXPECT_GT(pig3X, pig1X);
 }
 
+//texture loading test
+TEST(Texture, PigPictureCanBeLoaded) {
+    sf::Texture texture;
+    bool loaded = texture.loadFromFile(
+        "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/sprite_1.png"
+    );
+    EXPECT_TRUE(loaded);
+}
+
 int main(int argc, char** argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
