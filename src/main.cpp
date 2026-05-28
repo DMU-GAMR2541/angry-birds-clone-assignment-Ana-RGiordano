@@ -112,14 +112,14 @@ int main() {
     sf_ballVisual.setFillColor(sf::Color::Yellow);
 
     //BIRDS
-    std::string redBirdSprite = "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/redBird2.png";
-    std::string fastBirdSprite = "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/yellowBird.png";
-    std::string heavyBirdSprite = "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/blackBird.png";
+    std::string redBirdSprite = "../assets/Ang_Birds/redBird2.png";
+    std::string fastBirdSprite = "../assets/Ang_Birds/yellowBird.png";
+    std::string heavyBirdSprite = "../assets/Ang_Birds/blackBird.png";
 
     //PIGS
-    std::string pigSmall = "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/sprite_1.png";
-    std::string pigMedium = "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/sprite_2.png";
-    std::string pigLarge = "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/sprite_3.png";
+    std::string pigSmall = "../assets/Ang_Birds/sprite_1.png";
+    std::string pigMedium = "../assets/Ang_Birds/sprite_2.png";
+    std::string pigLarge = "../assets/Ang_Birds/sprite_3.png";
 
 
     // bottom plank

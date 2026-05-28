@@ -40,7 +40,7 @@ protected:
         //enemy = std::make_unique<Enemy>(50); // All enemnies in this test suite start with 50 HP.
         world = std::make_unique<b2World>(b2Vec2(0.0f, 9.8f));
         window = std::make_unique<sf::RenderWindow>();
-        pig = std::make_unique<Pig>(b2Vec2(100.0f / 30.0f, 500.0f / 30.0f), *world, "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/sprite_1.png", *window,
+        pig = std::make_unique<Pig>(b2Vec2(100.0f / 30.0f, 500.0f / 30.0f), *world, "../assets/Ang_Birds/sprite_1.png", *window,
             50, 15.0f, 30.0f, 57, 57);
 
 
@@ -174,10 +174,11 @@ TEST(Placement, PigPositionsRelativeToThreeGameObjects) {
 TEST(Texture, PigPictureCanBeLoaded) {
     sf::Texture texture;
     bool loaded = texture.loadFromFile(
-        "C:/Users/abeat/source/repos/angry-birds-clone-assignment-Ana-RGiordano/assets/Ang_Birds/sprite_1.png"
+        "../assets/Ang_Birds/sprite_1.png"
     );
     EXPECT_TRUE(loaded);
 }
+
 
 //tests correctness of the sequence of destructor calls
 class TestGameObject {
