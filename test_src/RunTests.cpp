@@ -179,6 +179,33 @@ TEST(Texture, PigPictureCanBeLoaded) {
     EXPECT_TRUE(loaded);
 }
 
+//tests correctness of the sequence of destructor calls
+class TestGameObject {
+public:
+    static std::vector<std::string> destructorCalls;
+    virtual ~TestGameObject() {
+        destructorCalls.push_back("GameObject");
+    }
+};
+
+class TestPigObject : public TestGameObject {
+public:
+    ~TestPigObject() override {
+        destructorCalls.push_back("Pig");
+    }
+};
+std::vector<std::string> TestGameObject::destructorCalls;
+
+TEST(Destructor, PigDestructorBeforeGameObjectDestructor) {
+    TestGameObject::destructorCalls.clear();
+    TestGameObject* object = new TestPigObject();
+    delete object;
+
+    ASSERT_EQ(TestGameObject::destructorCalls.size(), 2);
+    EXPECT_EQ(TestGameObject::destructorCalls[0], "Pig");
+    EXPECT_EQ(TestGameObject::destructorCalls[1], "GameObject");
+}
+
 int main(int argc, char** argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
