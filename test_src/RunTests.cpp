@@ -48,6 +48,15 @@ protected:
     //SUCCEED() << "Test test passed";
 //}
 
+
+
+//TEST_F(EnemyTest, LethalDamagePopsPig) {
+   // enemy->takeDamage(60);
+    //EXPECT_TRUE(enemy->checkIfPopped());
+//}
+
+
+//initial assertion test
 TEST(Assertions, BasicNonFatalAssertions) {
     EXPECT_EQ(100, 100);
     EXPECT_GT(100, 50);
@@ -55,10 +64,14 @@ TEST(Assertions, BasicNonFatalAssertions) {
     SUCCEED() << "Basic non-fatal assertions passed";
 }
 
-//TEST_F(EnemyTest, LethalDamagePopsPig) {
-   // enemy->takeDamage(60);
-    //EXPECT_TRUE(enemy->checkIfPopped());
-//}
+//fatal assertion
+TEST(Assertions, FatalAssertions) {
+    int health = 100;
+    ASSERT_EQ(health, 100);
+    ASSERT_GT(health, 0);
+}
+
+
 
 int main(int argc, char** argv) {
     testing::InitGoogleTest(&argc, argv);
