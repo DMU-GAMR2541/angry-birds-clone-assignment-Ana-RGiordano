@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include "Enemy.h"
 #include <memory>
+#include <vector>
 #include "Pig.h"
 #include <box2d/box2d.h>
 #include <SFML/Graphics.hpp>
@@ -114,6 +115,36 @@ TEST_F(EnemyTest, PigHealthCanBeReduced) {
 TEST_F(EnemyTest, LethalDamagePopsPig) {
     pig->takeHit(60);
     EXPECT_TRUE(pig->checkIfPopped());
+}
+
+//tests correctness of movement of a dynamic object across a spread of values
+TEST(Physics, DynamicObjectMovesAcrossValues) {
+    std::vector<float> impulseValues = { 2.0f, 5.0f, 10.0f };
+    
+    for (float impulse : impulseValues) {
+        b2World world(b2Vec2(0.0f, 9.8f));
+        
+        b2BodyDef bodyDef;
+        bodyDef.type = b2_dynamicBody;
+        bodyDef.position.Set(1.0f, 1.0f);
+        b2Body* body = world.CreateBody(&bodyDef);
+
+        b2CircleShape circle;
+        circle.m_radius = 0.5f;
+        
+        b2FixtureDef fixture;
+        fixture.shape = &circle;
+        fixture.density = 1.0f;
+        body->CreateFixture(&fixture);
+
+        float startX = body->GetPosition().x;
+        body->ApplyLinearImpulseToCenter(b2Vec2(impulse, 0.0f), true);
+        world.Step(1.0f / 60.0f, 8, 3);
+        float endX = body->GetPosition().x;
+
+        EXPECT_GT(endX, startX);
+
+    }
 }
 
 int main(int argc, char** argv) {
