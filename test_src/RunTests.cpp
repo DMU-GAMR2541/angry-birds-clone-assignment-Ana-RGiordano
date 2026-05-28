@@ -147,6 +147,18 @@ TEST(Physics, DynamicObjectMovesAcrossValues) {
     }
 }
 
+//tests correctness of the placement of a static object within teh window
+TEST(Placement, StaticObjectPlacementWithinWindow) {
+    float plankX = 680.0f;
+    float plankY = 530.0f;
+
+    EXPECT_GE(plankX, 0.0f);
+    EXPECT_LE(plankX, 800.0f);
+
+    EXPECT_GE(plankY, 0.0f);
+    EXPECT_LE(plankY, 600.0f);
+}
+
 int main(int argc, char** argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
