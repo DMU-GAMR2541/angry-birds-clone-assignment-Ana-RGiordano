@@ -8,6 +8,7 @@
 #include "HeavyBird.h"
 #include "Slingshot.h"
 #include "ContactListener.h" 
+#include "UI.h"
 #include <cmath>
 #include <vector>
 
@@ -31,6 +32,11 @@ int main() {
     titleText.setCharacterSize(20);
     titleText.setFillColor(sf::Color::Red);
     titleText.setPosition(50.0f, 10.0f);
+
+    //start screen UI
+    UI loadingUI;
+    bool showStartScreen = true;
+    sf::Clock startScreenClock;
 
     //Box2D works in meters. SFML works in pixels.
     const float SCALE = 30.0f;
@@ -329,6 +335,24 @@ int main() {
                     }
                 }
             }
+
+        }
+
+        if (showStartScreen) {
+            float progress = startScreenClock.getElapsedTime().asSeconds() * 50.0f;
+
+            if (progress >= 100.0f) {
+                progress = 100.0f;
+                showStartScreen = false;
+            }
+
+            loadingUI.update(progress);
+
+            window.clear(sf::Color(135, 206, 235));
+            loadingUI.draw(window);
+            window.display();
+
+            continue;
         }
 
         // Update Physics
