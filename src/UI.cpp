@@ -2,7 +2,7 @@
 #include <iostream>
 
 UI::UI() : StaticObject("", sf::Vector2f(0.0f, 0.0f), 30.0f) {
-	if (!font.loadFromFile("C:/Windows/Fonts/arial.ttf")) {
+	if (!font.loadFromFile("../assets/fonts/angry-birds.ttf")) {
 		std::cout << "Font failed to load" << std::endl;
 	}
 

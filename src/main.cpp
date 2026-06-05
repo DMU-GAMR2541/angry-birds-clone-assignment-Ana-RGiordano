@@ -15,6 +15,9 @@
 #include <cmath>
 #include <vector>
 #include <mutex>
+#include <future>
+#include <fstream>
+#include <sstream>
 
 
 std::mutex loadingMutex;
@@ -48,6 +51,29 @@ void loadPhysicsData() {
     std::cout << "Physics data loaded" << std::endl;
 }
 
+//async file processing
+int processCSVFile() {
+    std::ifstream file("../assets/Docs/UserDetails.csv");
+    if (!file.is_open()) {
+        std::cout << "Failed to open CSV file" << std::endl;
+        return 0;
+    }
+
+    std::string line;
+    int lineCount = 0;
+
+    while (std::getline(file, line)) {
+        lineCount++;
+    }
+    
+    file.close();
+
+    std::cout << "CSV lines Processed: " << lineCount << std::endl;
+    return lineCount;
+}
+
+
+
 int main() {
 
     // --- 1. WINDOW SETUP ---
@@ -56,7 +82,7 @@ int main() {
 
     //title
     sf::Font font;
-    if (!font.loadFromFile("C:/Windows/Fonts/arial.ttf")) {
+    if (!font.loadFromFile("../assets/fonts/angry-birds.ttf")) {
         std::cout << "Font failed to load" << std::endl;
     }
 
@@ -76,6 +102,10 @@ int main() {
     std::thread spriteLoadingThread(loadSpriteData);
     std::thread physicsLoadingThread(loadPhysicsData);
     bool loadingThreadsJoined = false;
+
+    //async csv processing
+    std::future<int> csvFuture = std::async(std::launch::async, processCSVFile);
+    bool csvProcessed = false;
 
     //adding static images on the start screen
     sf::Texture loadingBirdTexture;
@@ -402,6 +432,13 @@ int main() {
             }
 
         }
+
+        if (!csvProcessed) {
+            int csvLines = csvFuture.get();
+            std::cout << "CSV processing complete: " << csvLines << "lines" << std::endl;
+            csvProcessed = true;
+        }
+
 
         if (showStartScreen) {
             float progress;
