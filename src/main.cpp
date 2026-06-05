@@ -38,6 +38,20 @@ int main() {
     bool showStartScreen = true;
     sf::Clock startScreenClock;
 
+    //adding static images on teh start screen
+    sf::Texture loadingBirdTexture;
+    sf::Sprite loadingBirdLeft;
+    sf::Sprite loadingBirdRight;
+
+    loadingBirdTexture.loadFromFile("../assets/Ang_Birds/redBird2.png");
+
+    loadingBirdLeft.setTexture(loadingBirdTexture);
+    loadingBirdRight.setTexture(loadingBirdTexture);
+    loadingBirdLeft.setPosition(150.0f, 180.0f);
+    loadingBirdRight.setPosition(550.0f, 180.0f);
+    loadingBirdLeft.setScale(0.2f, 0.2f);
+    loadingBirdRight.setScale(0.2f, 0.2f);
+
     //Box2D works in meters. SFML works in pixels.
     const float SCALE = 30.0f;
 
@@ -339,7 +353,7 @@ int main() {
         }
 
         if (showStartScreen) {
-            float progress = startScreenClock.getElapsedTime().asSeconds() * 50.0f;
+            float progress = startScreenClock.getElapsedTime().asSeconds() * 20.0f;
 
             if (progress >= 100.0f) {
                 progress = 100.0f;
@@ -349,6 +363,8 @@ int main() {
             loadingUI.update(progress);
 
             window.clear(sf::Color(135, 206, 235));
+            window.draw(loadingBirdLeft);
+            window.draw(loadingBirdRight);
             loadingUI.draw(window);
             window.display();
 
