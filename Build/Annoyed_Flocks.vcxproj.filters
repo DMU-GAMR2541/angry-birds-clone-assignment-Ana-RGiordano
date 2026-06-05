@@ -7,6 +7,9 @@
     <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\src\Pig.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\src\PigPool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\src\UI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -37,6 +40,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\include\Pig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\include\PigPool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\abeat\source\repos\angry-birds-clone-assignment-Ana-RGiordano\include\RedBird.h">

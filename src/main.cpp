@@ -9,6 +9,7 @@
 #include "Slingshot.h"
 #include "ContactListener.h" 
 #include "UI.h"
+#include "PigPool.h"
 #include <thread>
 #include <chrono>
 #include <cmath>
@@ -221,6 +222,18 @@ int main() {
 
     //small pig - 100 health
     Pig pig6(b2Vec2(680.0f / SCALE, 445.0f / SCALE), world, pigSmall, window, 150, 15.0f, SCALE, 57, 57);
+
+    //memory pool for pig enemies
+    PigPool pigPool;
+    pigPool.addPig(&pig1);
+    pigPool.addPig(&pig2);
+    pigPool.addPig(&pig3);
+    pigPool.addPig(&pig4);
+    pigPool.addPig(&pig5);
+    pigPool.addPig(&pig6);
+
+    std::cout << "Pig pool size: " << pigPool.getPoolSize() << std::endl;
+
 
     // keep pigs in place before game starts
     pig1.getBody()->SetGravityScale(0);
