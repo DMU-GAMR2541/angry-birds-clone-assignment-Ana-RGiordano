@@ -13,18 +13,37 @@
 #include <chrono>
 #include <cmath>
 #include <vector>
+#include <mutex>
+
+
+std::mutex loadingMutex;
+float threadLoadingProgress = 0.0f;
 
 //fake loading task for sprite data
 void loadSpriteData() {
-    std::cout << "Loading sprite data.." << std::endl;
-    std::this_thread::sleep_for(std::chrono::seconds(2));
-    std::cout << "Sprite data loaded" << std::endl;
+    std::cout << "Loading sprite data.. " << std::endl;
+    for (int i = 0; i < 50; i++) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(50));
+        std::lock_guard<std::mutex> lock(loadingMutex);
+        threadLoadingProgress += 1.0f;
+    }
+
+    std::cout << "Sprite data loaded " << std::endl;
 }
+
+
 
 //fake loading task for physics data
 void loadPhysicsData() {
     std::cout << "Loading physics data.." << std::endl;
-    std::this_thread::sleep_for(std::chrono::seconds(3));
+
+    for (int i = 0; i < 50; i++) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(50));
+
+        std::lock_guard<std::mutex> lock(loadingMutex);
+            threadLoadingProgress+= 1.0f;
+    }
+
     std::cout << "Physics data loaded" << std::endl;
 }
 
@@ -372,7 +391,11 @@ int main() {
         }
 
         if (showStartScreen) {
-            float progress = startScreenClock.getElapsedTime().asSeconds() * 20.0f;
+            float progress;
+            {
+                std::lock_guard<std::mutex> lock(loadingMutex);
+                progress = threadLoadingProgress;
+            }
 
             if (progress >= 100.0f) {
                 progress = 100.0f;
