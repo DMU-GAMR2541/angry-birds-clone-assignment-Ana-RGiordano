@@ -9,10 +9,24 @@
 #include "Slingshot.h"
 #include "ContactListener.h" 
 #include "UI.h"
+#include <thread>
+#include <chrono>
 #include <cmath>
 #include <vector>
 
+//fake loading task for sprite data
+void loadSpriteData() {
+    std::cout << "Loading sprite data.." << std::endl;
+    std::this_thread::sleep_for(std::chrono::seconds(2));
+    std::cout << "Sprite data loaded" << std::endl;
+}
 
+//fake loading task for physics data
+void loadPhysicsData() {
+    std::cout << "Loading physics data.." << std::endl;
+    std::this_thread::sleep_for(std::chrono::seconds(3));
+    std::cout << "Physics data loaded" << std::endl;
+}
 
 int main() {
 
@@ -38,7 +52,12 @@ int main() {
     bool showStartScreen = true;
     sf::Clock startScreenClock;
 
-    //adding static images on teh start screen
+    //threads used to replicate loading sprite and physics data
+    std::thread spriteLoadingThread(loadSpriteData);
+    std::thread physicsLoadingThread(loadPhysicsData);
+    bool loadingThreadsJoined = false;
+
+    //adding static images on the start screen
     sf::Texture loadingBirdTexture;
     sf::Sprite loadingBirdLeft;
     sf::Sprite loadingBirdRight;
@@ -357,6 +376,14 @@ int main() {
 
             if (progress >= 100.0f) {
                 progress = 100.0f;
+
+                if (!loadingThreadsJoined) {
+                    spriteLoadingThread.join();
+                    physicsLoadingThread.join();
+                    loadingThreadsJoined = true;
+                }
+
+
                 showStartScreen = false;
             }
 
