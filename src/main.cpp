@@ -18,6 +18,7 @@
 #include <future>
 #include <fstream>
 #include <sstream>
+#include <map>
 
 
 std::mutex loadingMutex;
@@ -302,6 +303,14 @@ int main() {
 
     // bird damage values - red is neutral, fast does more, heavy does most
     std::vector<int> birdDamage = { 25, 50, 100 };
+    
+    //associative container storing bird damage values
+    std::map<std::string, int> birdDamageMap;
+    birdDamageMap["Red"] = 25;
+    birdDamageMap["Fast"] = 50;
+    birdDamageMap["Heavy"] = 100;
+
+    std::cout << "Red bird damage: " << birdDamageMap["Red"] << std::endl;
 
 
     GameContactListener contactListener;
